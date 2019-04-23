@@ -1,0 +1,100 @@
+  #editor { 
+      position: relative;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      min-height: 95vh;
+      min-width: 100%;
+  }
+
+  ul.list-group {
+    width: 100%;
+  }
+
+  .list-group-item {
+    cursor: pointer;
+    width: 100%;
+    padding: 0.3rem 1.25rem;
+  }
+
+  .list-group-item span.fileNameSpan {
+    width: 80%;
+    display: block;
+    float: left;
+  }
+
+  .list-group-item.active a {
+    color: #fff;
+  }
+  .list-group-item a {
+    display: block;
+    width: 100%;
+  }
+  .list-group-item i {
+    top: 4px;
+    position: relative;
+    color: #bbb;
+  }
+  .card .dir {
+    margin-top: 10px;
+    background: rgb(232, 233, 232);
+    color: #aaa;
+    padding: 5px;
+    clear: both;
+    position: relative;
+    display: block;
+    width: 90%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .card .card-body {
+    padding-top: 0px;
+  }
+  .spotlight {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    z-index: 999;
+    width: 600px;
+    box-shadow: 0px 5px 20px rgba(29, 75, 204, 0.5);
+  }
+
+  .filebrowser-toolbar-item i {
+    padding: 6px;
+    float: right;
+    color: #bbb;
+    font-size: 24px;
+  }
+
+  .filebrowser-toolbar-item.active i {
+    color: rgba(66, 102, 178, 0.8);
+  }
+  .feedback-overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    z-index: 999;
+    color: #bbb;
+    font-size: 55px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+  .mb-0 a {
+    width: 100%;
+  }
+
+  .mb-0 a span {
+    width: 70%;
+    text-align: left;
+  }
+
+  /* Dark Sidebar theme for full screen */
+  .darkSidebar .card {
+    background: #000;
+  }

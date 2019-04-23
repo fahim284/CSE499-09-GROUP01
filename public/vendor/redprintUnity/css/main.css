@@ -1,0 +1,34 @@
+.login-slider {
+    background: url("../../img/unify-cloudy.jpg") center center no-repeat;
+    background-size: cover !important;
+}
+.overlay {
+  background: rgba(51, 119, 150, 0.84) !important;
+}
+
+.overlay ul li {
+  background: rgba(255, 255, 255, 0.4) !important;
+  width: 100% !important;
+}
+
+.card {
+	background: #fff !important;
+}
+
+.card-header {
+	background: #fff !important;
+	border-bottom: 1px solid #fdfdfd !important;
+}
+
+ul.profile-buttons {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.profile-buttons li a.btn {
+	background: rgba(11, 136, 227, 0.5);
+}
+
+.is-mini span.profile-buttons-text {
+    display: none;
+}

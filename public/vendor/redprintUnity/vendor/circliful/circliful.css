@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../fonts/fontawesome-webfont.eot?v=4.3.0');
+  src: url('../../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.circliful .outer {
+	fill: transparent;
+	stroke: #333;
+	stroke-width: 19.8;
+	stroke-dasharray: 534;
+	transition: stroke-dashoffset 1s;
+	-webkit-animation-play-state: running;
+	/* firefox bug fix - won't rotate at 90deg angles */
+	-moz-transform: rotate(-89deg) translateX(-190px);
+}
+
+/* full circle 25 empty 534 */
+.circliful .inner {
+	fill: transparent;
+	stroke: orange;
+	stroke-width: 20;
+	stroke-dasharray: 534;
+	transition: stroke-dashoffset 1s;
+	-webkit-animation-play-state: running;
+	/* firefox bug fix - won't rotate at 90deg angles */
+	-moz-transform: rotate(-89deg) translateX(-190px);
+	stroke-dashoffset: 0;
+}
+
+.circliful {
+	overflow: visible !important;
+}
+.svg-container {
+	width: 85%;
+	max-width: 85%;
+	margin: 0 auto;
+	overflow: visible;
+}
+.traffic-source .svg-container {
+	width: 85px;
+} 
+
+svg .icon {
+	font-family: 'FontAwesome';
+}
+
+.timer {
+	font-size: 18px !important;
+}
