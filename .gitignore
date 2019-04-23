@@ -1,0 +1,33 @@
+.phpintel/
+.vagrant/
+/vendor/
+/public/vendor/*
+/public/updates/*
+/public/uploads/*
+/resources/views/vendor/redprint/*
+/resources/lang/vendor/*
+/bootstrap/cache/*
+node_modules/
+npm-debug.log
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+storage/*.key
+.env.*.php
+.env.php
+.env
+Homestead.yaml
+Homestead.json
+storage/redprint/*
+storage/lic
+storage/LicenseService.log
+storage/BuilderService.log
+storage/purchase_code
+
+# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
+.rocketeer/
+storage/installed
+storage/redprint_license
+storage/redprint_purchase_code
+storage/updates/*
