@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	
+	<title>Redprint Laravel App Builder (CRUD Generator Plus) - Build your next Laravel Project on steroids!</title>
+	
+	<meta name="description" content="Redprint App Builder is your app development flow on steroid! It can literally save you hundreds of hours of coding and lets you concentrate on what matters most. The application logic and problem solution.
+Features at a glance:
+
+    Built on top of Laravel 5.5
+    Totally unobtrusive. Version control and develop your app just like you do with vanilla Laravel installation! NO BLOATWARE whatsoever.
+    Generate CRUD following latest Laravel standards.
+    Built in Search and Pagination in CRUD. You can specify which fields are searchable.
+    Image/File upload mechanism in built.
+    Role/Permission (ACL) and User Management System (UMS) in built.
+    Model to Model relationship building.
+    Run all Laravel Commands from GUI.
+    REDPRINT mode to ensure the system leaves no footprint on production application.
+    Super fast and optimized!
+    In built core application updater!
+">
+	<meta name="author" content="Intelle Hub Inc.">
+	<meta name="copyright" content="Intelle Hub Inc.">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2018-02-24T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/documenter_style.css" media="all">
+	
+	
+	
+	<script src="assets/jquery_002.js"></script>
+	
+	<script src="assets/jquery_003.js"></script>
+	<script src="assets/jquery.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/script.js"></script>
+	
+	<style>
+		html{background-color:#EFEFEF;color:#1C140D;}
+		::-moz-selection{background:#CBE86B;color:#1C140D;}
+		::selection{background:#CBE86B;color:#1C140D;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#889C48;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #CBE86B, #889C48);
+			  background-image: -ms-linear-gradient(top, #CBE86B, #889C48);
+			  background-image: -webkit-gradient(linear, 0 0, 0 CBE86B%, from(#F2E9E1), to(#889C48));
+			  background-image: -webkit-linear-gradient(top, #CBE86B, #889C48);
+			  background-image: -o-linear-gradient(top, #CBE86B, #889C48);
+			  background-image: linear-gradient(top, #CBE86B, #889C48);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CBE86B', endColorstr='#889C48', GradientType=0);
+			  border-color: #889C48 #889C48 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #CBE86B #CBE86B #bfbfbf;
+		  background-color: #889C48;
+		}
+		hr{border-top:1px solid #CCCCCC;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#F2E9E1;color:#1C140D;http://redprint.intelle-hub.com/assets/frontend/img/header-bg.jpg}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #FFF6ED;-moz-text-shadow:1px 1px 0px #FFF6ED;text-shadow:1px 1px 0px #FFF6ED;}
+		#documenter_sidebar ul{border-top:1px solid #D1C9C2;}
+		#documenter_sidebar ul a{border-top:1px solid #FFF6ED;border-bottom:1px solid #D1C9C2;color:#1C140D;}
+		#documenter_sidebar ul a:hover{background:#CBE86B;color:#1C140D;border-top:1px solid #CBE86B;}
+		#documenter_sidebar ul a.current{background:#CBE86B;color:#1C140D;border-top:1px solid #CBE86B;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-redprint-laravel-app-builder-crud-generator-plus-" data-ta-time="1519431735798" cz-shortcut-listen="true">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#important_note" title="IMPORTANT NOTE">IMPORTANT NOTE</a></li>
+			<li><a href="#preface" title="Preface">Preface</a></li>
+			<li><a href="#requirements" title="Requirements">Requirements</a></li>
+			<li><a href="#installation" title="Installation">Installation</a></li>
+			<li><a href="#configuration" title="Configuration">Configuration</a></li>
+			<li><a href="#licensing" title="Licensing">Licensing</a></li>
+			<li><a href="#crud_generation_and_feature_usage" title="CRUD Generation And Feature Usage">CRUD Generation And Feature Usage</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Intelle Hub Inc. 2018<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Redprint Laravel App Builder (CRUD Generator Plus)</h1>
+	<h2>Build your next Laravel Project on steroids!</h2>
+	<div id="documenter_buttons">
+		<a href="http://redprint.intelle-hub.com/" class="btn btn-primary btn-large">Live Demo</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 02/15/2018</li>
+	<li>latest update: 02/24/2018</li>
+	<li>by: Intelle Hub Inc.</li>
+	<li><a href=""></a></li>
+	<li>email: <a href="mailto:intelle.hub@gmail.com">intelle.hub@gmail.com</a></li>
+	</ul>
+	<p>Build your next Laravel Project on steroids!</p>
+	</section>
+	
+	<section id="important_note">
+	<div class="page-header"><h3>IMPORTANT NOTE</h3><hr class="notop"></div>
+<p>
+	Redprint tools are intended for use on only local/development servers. It allows you to <strong>TURN OFF </strong>all Redprint Code Generation capabilities just by setting App Environment variable on your .env file.</p>
+</section>
+<section id="preface">
+	<div class="page-header"><h3>Preface</h3><hr class="notop"></div>
+<p>
+	Redprint should be used on a Fresh new Laravel project and not 
+recommended to use on your existing project. Redprint team will not 
+provide any technical support for users importing old codebase into a 
+Redprint installation. Albeit it's possible to do so if you follow 
+Laravel standard code practices, but then you should follow how Redprint
+ is structured and keep the routes/web.php file similar to what Redprint
+ provides.<br>
+	<br>
+	&nbsp;</p>
+</section>
+<section id="requirements">
+	<div class="page-header"><h3>Requirements</h3><hr class="notop"></div>
+<p>
+	- Apache/Nginx server with mod_rewrite or similar enabled for Laravel pretty url rewrites.<br>
+	- Php 7.x<br>
+	- MySQL<br>
+	- ext-fileinfo enabled on php.ini<br>
+	<br>
+	Please note that all Redprint requirements are Laravel standard requirements.</p>
+</section>
+<section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<p>
+	Redprint comes packed with a built in installer. Just visit /install on
+ your first install and it should guide you through the process.<br>
+	<br>
+	To start using Redprint on REDPRINT MODE [See Configuration], select App Environment as "REDPRINT"<br>
+	<br>
+	Please refer to this Youtube Video for a quickstart</p>
+<p>
+	<a href="https://youtu.be/REQZhHG43Vc">https://youtu.be/REQZhHG43Vc</a></p>
+</section>
+<section id="configuration">
+	<div class="page-header"><h3>Configuration</h3><hr class="notop"></div>
+<p>
+	To use the App in <strong>REDPRINT mode</strong>, you must configure it. During installation, please choose "App Environment" as "REDPRINT".<br>
+	<br>
+	WHY:<br>
+	Redprint uses a different mode for all it's CRUD generation and code 
+generation functionalities because it's never a good practice to provide
+ such tools on Production server. Redprint tools are intended for use on
+ only local/development servers.<br>
+	<br>
+	To enable/disable <strong>REDPRINT MODE </strong>after installation, just change your <strong>.env</strong> file and make the following change:</p>
+<p>
+	<strong>// to enable redprint</strong><br>
+	<strong>APP_ENV=REDPRINT&nbsp; </strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Any of the following three to disable it completely</strong><br>
+	<strong>APP_ENV=Production<br>
+	APP_ENV=Local<br>
+	APP_ENV=Development</strong><br>
+	<br>
+	That's it! You should be good to go.<br>
+	<br>
+	<br>
+	&nbsp;</p>
+</section>
+<section id="licensing">
+	<div class="page-header"><h3>Licensing</h3><hr class="notop"></div>
+<p>
+	Redprint requires you to license your product from CodeCanyon if you 
+want to use any of it's functionality. Some of the functionalities on 
+Redprint does not require licensing and are free for everyone. Namedly 
+Permissible (Role Permission System) and the UMS (User Management 
+System)</p>
+</section>
+<section id="crud_generation_and_feature_usage">
+	<div class="page-header"><h3>CRUD Generation And Feature Usage</h3><hr class="notop"></div>
+<p>
+	Redprint builds your CRUDS and integrates them right into your app. No 
+downloading ZIP files or anything. It requires you to use REDPRINT MODE 
+[See Configuration] and use it on a local computer. Not on a production 
+server. Please watch this youtube video for a better understanding<br>
+	<br>
+	<a href="https://youtu.be/NLIGG8wala4">https://youtu.be/NLIGG8wala4</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+
+	</div>
+
+<script id="wappalyzer" src="assets/inject.js"></script></body></html>
