@@ -25,6 +25,15 @@ Route::post(
 Route::middleware(['jwt.auth', 'role:admin'])->namespace('Backend\API')->prefix('v1/backend')->group(function () {
     //ROUTES
 
+    // FoodHistory Route
+    Route::get('foodHistories', 'FoodHistoriesController@index')->name('api.foodHistory.index');
+    Route::get('/foodHistories/{foodHistory}', 'FoodHistoriesController@form')->name('api.foodHistory.form');
+    Route::post('/foodHistories/save', 'FoodHistoriesController@post')->name('api.foodHistory.save');
+    Route::post('/foodHistories/{foodHistory}/delete', 'FoodHistoriesController@delete')->name('api.foodHistory.delete');
+    Route::post('/foodHistories/{foodHistory}/restore', 'FoodHistoriesController@restore')->name('api.foodHistory.restore');
+    Route::post('/foodHistories/{foodHistory}/force-delete', 'FoodHistoriesController@forceDelete')->name('api.foodHistory.force-delete');
+
+
     // Profile Route
     Route::get('profiles', 'ProfilesController@index')->name('api.profile.index');
     Route::get('/profiles/{profile}', 'ProfilesController@form')->name('api.profile.form');

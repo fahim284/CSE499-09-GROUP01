@@ -1,0 +1,60 @@
+version: '3'
+services:
+  app:
+    container_name: app
+    build:
+      context: ./
+      dockerfile: Docker/App
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=db"
+    restart: on-failure
+    depends_on:
+      - db
+      - redis
+      - web
+
+  redis:
+    container_name: redis
+    build:
+      context: ./
+      dockerfile: Docker/Redis
+    ports:
+      - 16379:6379
+    restart: on-failure
+
+  db:
+    container_name: db
+    image: mysql:5.7
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=fitness"
+      - "MYSQL_USER=root"
+      - "MYSQL_PASSWORD=root123"
+      - "MYSQL_ROOT_PASSWORD=root123"
+    ports:
+      - "33006:3306"
+    restart: always
+
+  web:
+    container_name: web
+    build:
+      context: ./
+      dockerfile: Docker/Web
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    environment:
+      - VIRTUAL_HOST=fitness.local
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+
+volumes:
+  dbdata:

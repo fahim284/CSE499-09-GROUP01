@@ -27,6 +27,10 @@
       @else
 
       <li class="nav-item">
+        <a class="nav-link" href="{{ route('profiles.home') }}">Home</a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href="{{ route('profiles.new') }}">Profile</a>
       </li>
 
@@ -35,7 +39,11 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Food History</a>
+        <a class="nav-link disabled" href="{{ route('report.form') }}">Report</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Clients</a>
       </li>
 
       <li class="nav-item">

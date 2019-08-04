@@ -1,13 +1,6 @@
 @extends("layouts.default")
 
 @section("title") @parent Profile @stop
-@section('css')
-    @parent
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-@stop
 
 @section("content")
 
@@ -19,7 +12,7 @@
         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
         <div class="form-group">
-            <label style="color:#FFFF00;">Height: </label>
+            <label>Height: </label>
             <input type="text" name="height" placeholder="eg. CM" class="form-control @if ($errors->has("height")) is-invalid @endif" value="{{ $profile->height ?: old("height") }}">
 
             @if($errors->has("height"))
@@ -31,7 +24,7 @@
         </div>
         
         <div class="form-group">
-            <label style="color:#FFFF00;">Weight: </label>
+            <label>Weight: </label>
             <input type="text" name="weight" placeholder="80kg" class="form-control @if ($errors->has("weight")) is-invalid @endif" value="{{ $profile->weight ?: old("weight") }}">
 
             @if($errors->has("weight"))
@@ -43,7 +36,7 @@
         </div>
 
         <div class="form-group">
-            <label style="color:#FFFF00;">Age: </label>
+            <label>Age: </label>
             <input type="text" name="age" placeholder="50" class="form-control @if ($errors->has("age")) is-invalid @endif" value="{{ $profile->age ?: old("age") }}">
 
             @if($errors->has("age"))
@@ -55,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            <label style="color:#FFFF00;">Gender: </label>
+            <label>Gender: </label>
             <input type="text" name="gender" placeholder="Gender" class="form-control @if ($errors->has("gender")) is-invalid @endif" value="{{ $profile->gender ?: old("gender") }}">
 
             @if($errors->has("gender"))
@@ -67,7 +60,7 @@
         </div>
 
         <div class="form-group">
-            <label style="color:#FFFF00;">Contact: </label>
+            <label>Contact: </label>
             <input type="text" name="contact" placeholder="+2545488" class="form-control @if ($errors->has("contact")) is-invalid @endif" value="{{ $profile->contact ?: old("contact") }}">
 
             @if($errors->has("contact"))
@@ -78,13 +71,13 @@
 
         </div>
 
-        <div class="form-group" style="color:#FFFF00;">
+        <div class="form-group">
             <label>Plan: </label> <br />
             <input type="radio" name="plan" value="0"> Gain <br />
             <input type="radio" name="plan" value="1"> Loss<br />
         </div>
 
-        {{-- <div class="form-group">
+        <div class="form-group">
             <label>Image</label><br/>
 
             @if ($profile->avatar)
@@ -98,16 +91,12 @@
                 </div>
             @endif
 
-        </div>     --}}
+        </div>    
             
             <input type="submit" @if($profile->exists) value="Edit" @endif value="Create Profile" class="btn btn-success">
     </form>
 @stop
-@section('js')
-    @parent
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-@stop
+
 @section("sidebar")
     {{-- <a href="{{ route("staff.index") }}" class="btn btn-success">All Staff</a> --}}
 @stop

@@ -12,4 +12,9 @@ class Product extends Model
     {
     	return $this->hasOne(\App\ServingSize::class, 'product_id', 'id');
     }
+
+    public function foodHistories()
+    {
+        return $this->hasMany(\App\FoodHistory::class);
+    }
 }

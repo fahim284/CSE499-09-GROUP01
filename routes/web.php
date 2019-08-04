@@ -18,6 +18,10 @@ Route::get('/test', 'Testcontroller@index');
 Route::namespace('Frontend')->prefix('pages')->group(function () {
     
 
+    // FoodHistory Frontend Route
+    Route::get('/foodHistories', 'FoodHistoriesController@index')->name('foodHistory.frontend.index');
+
+
     // Profile Frontend Route
     Route::get('/profiles', 'ProfilesController@index')->name('profile.frontend.index');
 });
@@ -30,6 +34,16 @@ Route::namespace('Backend')->prefix('backend')->group(function () {
 
 Route::middleware(['role:admin', 'auth'])->namespace('Backend')->prefix('backend')->group(function () {
     Route::get('/', 'DashboardController@index')->name('backend.dashboard');
+
+    // FoodHistory Route
+    Route::get('foodHistories', 'FoodHistoriesController@index')->name('foodHistory.index');
+    Route::get('/foodHistories/new', 'FoodHistoriesController@form')->name('foodHistory.new');
+    Route::get('/foodHistories/{foodHistory}', 'FoodHistoriesController@form')->name('foodHistory.form');
+    Route::post('/foodHistories/save', 'FoodHistoriesController@post')->name('foodHistory.save');
+    Route::post('/foodHistories/{foodHistory}/delete', 'FoodHistoriesController@delete')->name('foodHistory.delete');
+    Route::post('/foodHistories/{foodHistory}/restore', 'FoodHistoriesController@restore')->name('foodHistory.restore');
+    Route::post('/foodHistories/{foodHistory}/force-delete', 'FoodHistoriesController@forceDelete')->name('foodHistory.force-delete');
+
 
     // Profile Route
     Route::get('profiles', 'ProfilesController@index')->name('profile.index');
@@ -50,6 +64,7 @@ Route::middleware(['role:admin', 'auth'])->namespace('Backend')->prefix('backend
 // DO NOT EDIT THIS LINE
 
 
+Route::get("/index", "LogController@getHome")->name("home");
 Route::get("/login", "LogController@loginForm")->name("login");
 Route::get("/logout", "LogController@logout")->name("logout");
 Route::post("/login", "LogController@postLogin")->name("login.post");
@@ -61,13 +76,17 @@ Route::middleware("auth")->group(function ()
 {
     Route::get("/home", "ProfilesController@home")->name("profiles.home");
     Route::get("/profile/new", "ProfilesController@form")->name("profiles.new");
+    Route::get("/report", "FoodController@reportForm")->name("report.form");
+    Route::get("/report/show", "FoodController@reportPost")->name("report.show");
     Route::post("/profile/save", "ProfilesController@post")->name("profiles.save");
 
     Route::get('/food/add', 'FoodController@getIndex')->name('food.add');
     Route::post('/food/add', 'FoodController@postFood')->name('food.post');
 
     Route::get('/food-catalogue', 'FoodController@getFoodCatalogue')->name('food.catalogue');
-    Route::get('/food/serving-size/{product}', 'FoodController@getServingSize')->name('food.serving_size');
+    Route::get('/food/nutrition-details/{product}', 'FoodController@getNutritionDetails')->name('food.nutrition_details');
+
+    Route::post('/food/consume', 'FoodController@postConsumeFood')->name('food.consume.post');
 });
 
 

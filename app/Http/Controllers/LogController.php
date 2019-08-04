@@ -11,6 +11,10 @@ use App\Http\Requests\RegistrationRequest;
 
 class LogController extends Controller
 {
+    public function getHome()
+    {
+        return view('index');
+    }
     public function loginForm()
     {
         return view('log.login');
@@ -28,7 +32,7 @@ class LogController extends Controller
 
         if (Auth::attempt(["email" => $email, "password" => $password]))
         {
-            return redirect()->route("profiles.home");            
+            return redirect()->route("profiles.home");         
         }
 
         else

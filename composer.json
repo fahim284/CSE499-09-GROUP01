@@ -7,12 +7,13 @@
     "require": {
         "php": ">=7.1.0",
         "doctrine/dbal": "^2.6",
+        "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "~5.7",
         "laravel/tinker": "~1.0",
         "predis/predis": "^1.1",
         "rachidlaasri/laravel-installer": "master",
-        "shah-newaz/redprint": "1.7.*",
-        "shah-newaz/permissible": "1.*"
+        "shah-newaz/permissible": "1.*",
+        "shah-newaz/redprint": "1.7.*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

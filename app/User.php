@@ -62,4 +62,12 @@ class User extends Permissible
     {
         return $this->hasOne(\App\Profile::class);
     }
-}
+    /**
+     * user hasMany foodHistories
+     * @return Illuminate\Database\Eloquent\Relations\hasMany
+     * */
+    public function foodHistories()
+    {
+        return $this->hasMany(\App\FoodHistory::class);
+    }
+ }

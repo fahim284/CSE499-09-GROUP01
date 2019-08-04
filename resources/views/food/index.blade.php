@@ -17,7 +17,7 @@
                     placeholder="Please enter a keyword"
                     :remote-method="getProducts"
                     :loading="loading"
-                    @change="getServingSize"
+                    @change="getNutritionDetails"
                   >
                     <el-option
                       v-for="product in products"
@@ -32,27 +32,17 @@
                   <div slot="header" class="clearfix">
                     <span>More Information</span>
                   </div>
-                  <div class="text item">
-                    Serving Size: @{{ serving_size.serving_size }}
-                  </div>
 
-                  <div class="text item">
-                    Serving Size UOM: @{{ serving_size.serving_size_uom }}
-                  </div>
-
-                  <div class="text item">
-                    House hold Serving Size: @{{ serving_size.household_serving_size }}
-                  </div>
-
-
-                  <div class="text item">
-                    House hold Serving Size UOM: @{{ serving_size.household_serving_size_uom }}
+                  <div class="text item" v-for="nutrient in nutrients">
+                    @{{ nutrient.name }}: @{{ nutrient.value }} [@{{ nutrient.unit }}]
                   </div>
 
                 </el-card>
 
                 <p>How many units have you consumed?</p>
                 <el-input-number v-model="intake"  :min="1" :max="1000"></el-input-number>
+
+                <el-button type="success" plain @click.prevent="submit">Submit</el-button>
 
             </form>
         </div>
@@ -89,7 +79,7 @@
       return {
         products: [],
         product_id: '',
-        serving_size: '',
+        nutrients: [],
         loading: false,
         intake: 1
       }
@@ -107,17 +97,35 @@
             console.log(JSON.stringify(response))
           })
       },
-      getServingSize: function (product_id) {
+      getNutritionDetails: function (product_id) {
         var self = this
         self.loading = true
-        axios.get('/food/serving-size/' + product_id)
+        axios.get('/food/nutrition-details/' + product_id)
           .then(function (response) {
-            self.serving_size = response.data
+            // console.log(JSON.stringify(response))
+            self.nutrients = response.data.report.food.nutrients
+            self.product_id = product_id
             self.loading = false
           })
           .catch(function (response) {
             console.log(JSON.stringify(response))
           })
+      },
+      submit: function () {
+        var nutrients = this.nutrients
+        var energy = nutrients.find(x => x.name === 'Energy').value
+        var data = { energy: energy, product_id: this.product_id, intake: this.intake }
+        axios.post('/food/consume', data)
+          .then(function (response) {
+            // console.log(JSON.stringify(response))
+            self.nutrients = []
+            self.product_id = ''
+            self.loading = false
+          })
+          .catch(function (response) {
+            console.log(JSON.stringify(response))
+          })
+
       }
     },
     mounted: function () {
