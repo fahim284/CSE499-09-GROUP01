@@ -94,7 +94,7 @@
                     Already have an account?<a href="#">Login</a>
                 </div>
                 <div class="d-flex justify-content-center links">
-                    Made By Fahim Khan
+                    Made By Khalid Shahriyar
                 </div>
             </div>
         </div>
