@@ -75,7 +75,7 @@ class FoodController extends Controller
 
         $histories = FoodHistory::with('product');
 
-        $net_calorie = $histories->whereBetween('created_at', [$date_from, $date_to])->sum('net_calorie');
+        $net_calorie = $histories->where('user_id', auth()->user()->id)->whereBetween('created_at', [$date_from, $date_to])->sum('net_calorie');
 
         $histories = $histories->whereBetween('created_at', [$date_from, $date_to])->paginate(5);
 
@@ -122,11 +122,14 @@ class FoodController extends Controller
 
         if($histories->count() == 0)
         {
-            return view('reports.index')->with('histories', $histories)
+            return view('reports.index')
+                ->with('histories', $histories)
                 ->with('message', 'There Is No Record Between Given Dates')
                 ->with('net_calorie', '')
                 ->with('suggested_bmr', $suggested_bmr)
-                ->with('person', $person);
+                ->with('person', $person)
+                ->with('profit', '')
+                ->with('loss', '');
         }
 
         if ($suggested_bmr > $net_calorie)
